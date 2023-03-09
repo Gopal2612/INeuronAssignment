@@ -13,7 +13,7 @@ function Details() {
     let modifiedArr:any[] = []
     const keys = Object.keys(variable)
     text.split(" ").map(word => {
-      if (keys.includes(word)) modifiedArr.push(<a className="text-blue-700" href={`/variable/${word}/${criteriaIndex}/${id}`}>{word.replace('$', '')}</a>)
+      if (keys.includes(word)) modifiedArr.push(<span className="text-blue-700 cursor-pointer" onClick={()=> navigate(`/variable/${word}/${criteriaIndex}/${id}`)}>{word.replace('$', '')}</span>)
       else modifiedArr.push(<span> {word} </span>)
     })
     return modifiedArr
